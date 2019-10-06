@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Personal Expense</title>
-    <style> body {
-display:flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
+    <style> 
+    body {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 
    
    } 
@@ -17,11 +19,21 @@ height: 100vh;
    
 </head>
 <body>
+  <h0 id="headingTotal"> </h0>
     <button id="btnAddExpense">Click Here! </button>
     <input id="inputAmount" type="text"> </input>
     <script> 
+
+           //get the heading element 
+           const headingE1= document.querySelector("#headingTotal");
+
+
            //init value of expense at 0
            let totalExpense = 0;
+           //Set the heading Element to totalExpense
+           headingE1.textContent = totalExpense;
+
+
             //Get the button element
             const element = document.querySelector("#btnAddExpense")
         
@@ -42,7 +54,10 @@ height: 100vh;
             console.log({expense});
 
             totalExpense = totalExpense + expense;
-            console.log(totalExpense);
+            
+            //set the heeading element to expense
+              headingE1.textContent = totalExpense;
+            
             }
             
         
